@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ChooseUs = () => {
+const ContentVideoBtn = () => {
   return (
     <>
         <div className="fancy-text-block-twentyTwo lg-container mt-250 md-mt-120" id="whyUs">
@@ -82,4 +82,4 @@ const ChooseUs = () => {
   )
 }
 
-export default ChooseUs
+export default ContentVideoBtn

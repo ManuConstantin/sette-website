@@ -1,10 +1,19 @@
 import React from 'react'
+import Link from 'next/link'
+import {navigationData} from '../constants/navigation';
+
 
 const Navigation = () => {
+  
+
   return (
     <div className="theme-main-menu sticky-menu theme-menu-five">
         <div className="d-flex align-items-center justify-content-center">
-            <div className="logo"><a href="index.html"><img src="/assets/images/logo/deski_06.svg" alt="" /></a></div>
+            <div className="logo">
+                <Link href='/'>
+                    <a><img src="/assets/images/logo/deski_06.svg" alt="" /></a>
+                </Link>
+            </div>
 
             <nav id="mega-menu-holder" className="navbar navbar-expand-lg">
                 <div  className="nav-container">
@@ -14,11 +23,50 @@ const Navigation = () => {
                     <div className="navbar-collapse collapse" id="navbarSupportedContent">
                         <div className="d-lg-flex justify-content-between align-items-center">
                             <ul className="navbar-nav main-side-nav font-gordita" id="one-page-nav">
-                            <li className="nav-item">
-                                    <a href="#product" className="nav-link">Acasa</a>
+                                {/* <li className="nav-item">
+                                    <Link href={{ pathname: '/about', slug: 'despre-noi', as:'despre-noi'}}>
+                                        <a className="nav-link">Despre noi</a>
+                                    </Link>
+                                </li> */}
+
+                                {
+                                    navigationData.map(item => (
+                                        <li className={`nav-item ${item?.subitems?.length > 0 ? 'dropdown' : ''}`} key={item.name}>
+                                            <Link href={item.href}>
+                                                <a className={`nav-link ${item?.subitems?.length > 0 ? 'dropdown-toggle' : ''}`}>{item.name}</a>
+                                            </Link>
+                                            {
+                                              
+                                                item?.subitems?.length > 0 ?
+                                                <ul className="dropdown-menu">
+                                                    {console.log('item?.subitems', item?.subitems)}
+                                                    {item.subitems.map(subitem => (
+                                                        <li key={subitem.name}>
+                                                            <Link href={subitem.href}>
+                                                                <a className="dropdown-item">{subitem.title}</a>
+                                                            </Link>
+                                                        </li>
+                                                    ))}
+                                                </ul> : ''
+                                            }
+                                        </li>
+                                    ))
+                                }
+                                {/* <li className="nav-item">
+                                    <Link href="/">
+                                        <a className="nav-link">Acasa</a>
+                                    </Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link href='/despre-noi'>
+                                        <a className="nav-link">Despre noi</a>
+                                    </Link>
+                                </li>
+
                                 <li className="nav-item dropdown">
-                                        <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Servicii</a>
+                                    <Link href='/servicii'>
+                                        <a className="nav-link dropdown-toggle" data-toggle="dropdown">Servicii</a>
+                                    </Link>
                                         <ul className="dropdown-menu">
                                             <li>
                                                 <a href="portfolio-V1.html" className="dropdown-item">Aplicatii web</a>
@@ -33,14 +81,20 @@ const Navigation = () => {
                                     </li>
 
                                 <li className="nav-item">
-                                    <a href="#product" className="nav-link">Portofoliu</a>
+                                    <Link href='/portofoliu'>
+                                        <a className="nav-link">Portofoliu</a>
+                                    </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a href="#pricing" className="nav-link">Preturi</a>
+                                    <Link href='/blog'>
+                                        <a className="nav-link">Blog</a>
+                                    </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a href="#feedback" className="nav-link">Contact</a>
-                                </li>
+                                    <Link href='/contact'>
+                                        <a className="nav-link">Contact</a>
+                                    </Link>
+                                </li> */}
                             </ul>
                         </div>
                     </div>
@@ -49,9 +103,11 @@ const Navigation = () => {
             <div className="right-widget">
                 <ul  className="d-flex align-items-center pr-feature">
                     <li>
-                        <a href="#" className="theme-btn-eight">
-                            Cere oferta
-                        </a>
+                        <Link href="/contact">
+                            <a className="theme-btn-eight">
+                                Cere oferta
+                            </a>
+                        </Link>
                     </li>
                 </ul>
             </div>

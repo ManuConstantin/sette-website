@@ -1,8 +1,9 @@
 import Head from 'next/head'
-import ChooseUs from '../components/pages/ChooseUs'
-import HeroBanner from '../components/pages/HeroBanner'
-import PricingSection from '../components/pages/PricingSection'
-import Services from '../components/pages/Services'
+import ContentVideoBtn from '../components/contentSections/ContetnVideoBtn'
+import HeroBanner from '../components/banners/HeroBanner'
+import PricingSection from '../components/prices/PricingSection'
+import MultipleContent from '../components/contentSections/MultipleContent'
+import FaqClassic from '../components/faq/FaqClassic'
 // import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -15,11 +16,10 @@ export default function Home() {
       </Head>
       
       <HeroBanner />
-      <Services />
-      <ChooseUs />
+      <MultipleContent />
+      <ContentVideoBtn />
       <PricingSection />
-      {/* <FeedbackSlider /> */}
-
+      <FaqClassic />
     </div>
   )
 }
