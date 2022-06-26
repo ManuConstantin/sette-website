@@ -1,28 +1,35 @@
 import React from 'react'
+import Link from 'next/link';
 
-const SimpleContentOne = () => {
+const SimpleContentOne = (props) => {
+  const {subtitle, title, description, link, logos} = props;
+  const numbers = ['one', 'two', 'three', 'four', 'five', 'six'];
+
   return (
     <div className="block-style-eighteen">
         <div className="row align-items-center">
             <div className="col-lg-5" data-aos="fade-right" data-aos-duration="1200">
                 <div className="text-wrapper">
-                    <h6>App Integration</h6>
-                    <h3 className="title">Connect with <span>software.</span></h3>
-                    <p>Share content across apps. Deski connects with the productivity tools you already use, so you can work your way.</p>
-                    <a href="#" className="d-flex align-items-center learn-more">
-                        <span>Learn More</span>
-                        <img src="/assets/images/icon/93.svg" alt="" />
-                    </a>
+                    <h6>{subtitle}</h6>
+                    <h2 className="title">{title}</h2>
+                    <p>{description}</p>
+                    <Link href={link}>
+                        <a href="" className="d-flex align-items-center learn-more">
+                            <span>Detalii</span>
+                            <img src="/assets/images/icon/93.svg" alt="" />
+                        </a>
+                    </Link>
                 </div> 
             </div>
             <div className="col-lg-7" data-aos="fade-left" data-aos-duration="1200">
                 <div className="screen-holder-one d-flex align-items-center justify-content-center">
-                    <div className="round-bg d-flex align-items-center justify-content-center" ><img src="/assets/images/logo/logo-26.png" alt="" /></div>
-                    <div className="round-bg d-flex align-items-center justify-content-center shapes logo-one" ><img src="/assets/images/logo/logo-27.png" alt="" /></div>
-                    <div className="round-bg d-flex align-items-center justify-content-center shapes logo-two" ><img src="/assets/images/logo/logo-28.png" alt="" /></div>
-                    <div className="round-bg d-flex align-items-center justify-content-center shapes logo-three" ><img src="/assets/images/logo/logo-29.png" alt="" /></div>
-                    <div className="round-bg d-flex align-items-center justify-content-center shapes logo-four" ><img src="/assets/images/logo/logo-30.png" alt="" /></div>
-                    <div className="round-bg d-flex align-items-center justify-content-center shapes logo-five" ><img src="/assets/images/logo/logo-31.png" alt="" /></div>
+                    {
+                        logos.map((logo, index) => (
+                            <div className={`round-bg d-flex align-items-center justify-content-center ${index > 0 ? `shapes logo-${numbers[index - 1]}` : ''}`} key={logo.name}>
+                                <img src={logo.src} alt="" />
+                            </div>
+                        ))
+                    }
                     <img src="/assets/images/shape/170.svg" alt="" className="shapes shape-one" />
                 </div>
             </div>

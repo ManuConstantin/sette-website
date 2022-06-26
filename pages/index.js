@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import ContentVideoBtn from '../components/contentSections/ContetnVideoBtn'
 import HeroBanner from '../components/banners/HeroBanner'
-import PricingSection from '../components/prices/PricingSection'
+import FancyFeaturesThree from '../components/fancies/FancyFeaturesThree'
 import MultipleContent from '../components/contentSections/MultipleContent'
 import FaqClassic from '../components/faq/FaqClassic'
+import { FAQ, YELLOW_ZONE } from '../constants/homepage'
 // import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -17,9 +18,28 @@ export default function Home() {
       
       <HeroBanner />
       <MultipleContent />
-      <ContentVideoBtn />
-      <PricingSection />
-      <FaqClassic />
+
+      <ContentVideoBtn 
+        title="De ce sa alegi Sette?"
+        description="Dezvoltam plicatii web si mobile. From 0 to hero."
+        link="/servicii."
+        youtube_link="https://www.youtube.com/embed/aXFSJTjVjw0"
+        image={{
+          name: 'name',
+          src: '/assets/images/icon/71.svg'
+        }}
+      />
+
+      <FancyFeaturesThree 
+        content={YELLOW_ZONE}
+      />
+      
+      {/* <PricingSection /> */}
+      <FaqClassic 
+        title="Cele mai frecvente intrebari."
+        subtitle="Intrebari & Raspunsuri"
+        questions={FAQ}
+      />
     </div>
   )
 }

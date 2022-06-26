@@ -1,21 +1,41 @@
 import React from 'react'
 
-const FaqClassic = () => {
+const FaqClassic = (props) => {
+  const {title, subtitle, questions} = props;
+
   return (
     <div className="faq-classic pt-225 md-pt-120">
         <div className="container">
             <div className="row">
                 <div className="col-lg-6">
                     <div className="title-style-seven">
-                        <h6 className="font-rubik">Find your answers</h6>
-                        <h2>Have any thought? Look here.</h2>
+                        <h6 className="font-rubik">{subtitle}</h6>
+                        <h2>{title}</h2>
                     </div>
                     {/* <a href="faqs.html" className="theme-btn-one mt-50 md-mt-30">Go to Faq</a> */}
                 </div>
                 <div className="col-lg-6">
                    
                     <div id="accordion" className="md-mt-60">
-                        <div className="card">
+                        {
+                            questions.map((question, index) => (
+                                <div className="card" key={question.q + '-' + index}>
+                                    <div className="card-header" id={'question' + index}>
+                                    <h5 className="mb-0">
+                                        <button className="btn btn-link">
+                                        {question.q}
+                                        </button>
+                                    </h5>
+                                    </div>
+                                    <div id="collapseOne" className="collapse">
+                                    <div className="card-body">
+                                        <p>{question.a}</p>
+                                    </div>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                        {/* <div className="card">
                             <div className="card-header" id="headingOne">
                             <h5 className="mb-0">
                                 <button className="btn btn-link">
@@ -29,6 +49,9 @@ const FaqClassic = () => {
                             </div>
                             </div>
                         </div>
+
+
+
                         <div className="card">
                             <div className="card-header" id="headingTwo">
                             <h5 className="mb-0">
@@ -84,7 +107,7 @@ const FaqClassic = () => {
                                 <p>mea case duis tollit et. Etiam nusquam set minium eu sea, ei tale paulo elab. Noluisse mnesarch Et is vero incorrupte eos deserunt quaeren.</p>
                             </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
