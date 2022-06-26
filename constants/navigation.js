@@ -10,9 +10,9 @@ export const navigationData = [
         href: "/about"
     },
     {
-        name: "Portofoliu",
-        title: "Portofoliu",
-        href: "/portofoliu"
+        name: "Proiecte",
+        title: "Proiecte",
+        href: "/projects"
     },
     {
         name: "Servicii",
@@ -36,11 +36,11 @@ export const navigationData = [
             },
         ]
     },
-    {
-        name: "Blog",
-        title: "Blog",
-        href: "/blog"
-    },
+    // {
+    //     name: "Blog",
+    //     title: "Blog",
+    //     href: "/blog"
+    // },
     {
         name: "Contact",
         title: "Contact",

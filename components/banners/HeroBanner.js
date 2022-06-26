@@ -1,5 +1,6 @@
 import Image from "next/image"
 import SmallCarousel from "../carousels/SmallCarousel"
+import {TECHNOLOGIES} from '../../constants/technologies';
 
 const HeroBanner = () => {
   return (
@@ -35,7 +36,10 @@ const HeroBanner = () => {
                 </div>
             </div>
         </div>
-        <SmallCarousel />
+        <SmallCarousel 
+            description='Folosim cele mai noi tehnologii pentru dezvoltare de software.'
+            images={TECHNOLOGIES}
+        />
     </div>
   )
 }

@@ -5,7 +5,6 @@
     // Version      : 1.0.
     // Developed by : (me@heloshape.com) / (www.me.heloshape.com)
 
-
 (function($) {
     "use strict";
     

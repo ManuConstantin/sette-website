@@ -2,11 +2,11 @@ import React from 'react'
 import HeroPageTitle from '../../components/titles/HeroPageTitle'
 import PortofolioOne from '../../components/portofolios/PortofolioOne'
 
-const Portofoliu = () => {
+const Projects = () => {
   return (
     <>
         <HeroPageTitle 
-          title='Portofoliu proiecte'
+          title='Proiecte'
           description='Ne bizuim pe experienta! Vezi ultimele proiecte realizate.'
         />
         <PortofolioOne />
@@ -14,4 +14,4 @@ const Portofoliu = () => {
   )
 }
 
-export default Portofoliu
+export default Projects
